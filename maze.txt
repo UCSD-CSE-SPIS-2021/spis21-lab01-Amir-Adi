@@ -1,0 +1,19 @@
+#if it is possible to go to the right, go to the right
+0 *x** -> E 1
+0 *E** -> x 2
+
+#if it is possible to either go to the north or to the right, go to the north
+1 x*** -> N 3
+
+#if the north is closed, go right
+1 N*** -> x 0
+
+#if the right is closed and the south is open, go south
+2 ***x -> S 0
+2 ***S -> x 3
+
+#if the west is open after moving north or after the south is closed, go west
+3 **x* -> W 2
+
+#if the west and previous conditions are closed go to stage 1
+3 **W* -> x 1
